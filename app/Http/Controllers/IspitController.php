@@ -12,9 +12,9 @@ class Ispit extends Controller
      */
     public function index()
     {
-        return dd(
-            Ispit::all()
-        );
+        $ispit = Ispit::all();
+
+        return view('Ispit.index', compact('ispit'));
     }
 
     /**
@@ -22,7 +22,7 @@ class Ispit extends Controller
      */
     public function create()
     {
-        return abort(403);
+        return view('ispit.create');
     }
 
     /**
@@ -66,6 +66,7 @@ class Ispit extends Controller
      */
     public function destroy($id)
     {
-        //
+        Ispit::destroy($id);
+        return redirect()->route('Ispit'); 
     }
 }
