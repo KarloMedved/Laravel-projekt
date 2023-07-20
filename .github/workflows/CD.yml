@@ -18,7 +18,7 @@ jobs:
           password: ${{ secrets.SERVER_PASSWORD }}
           port: 22
           script: |
-            cd /var/www/html/KarloM
+            cd /var/www/html/KarloM/Laravel-projekt
             git pull origin main
             php artisan migrate
             npm install
